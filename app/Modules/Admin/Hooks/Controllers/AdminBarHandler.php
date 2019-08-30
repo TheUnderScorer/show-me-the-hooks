@@ -1,13 +1,13 @@
 <?php
 
-namespace WPK\Modules\Admin\Hooks\Controllers;
+namespace SMTH\Modules\Admin\Hooks\Controllers;
 
 use UnderScorer\Core\Hooks\Controllers\Controller;
 use WP_Admin_Bar as AdminBar;
 
 /**
  * Class AdminBarHandler
- * @package WPK\Modules\Admin\Hooks\Controllers
+ * @package SMTH\Modules\Admin\Hooks\Controllers
  */
 class AdminBarHandler extends Controller
 {

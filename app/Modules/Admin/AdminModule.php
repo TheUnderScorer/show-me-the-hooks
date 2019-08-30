@@ -1,13 +1,13 @@
 <?php
 
-namespace WPK\Modules\Admin;
+namespace SMTH\Modules\Admin;
 
+use SMTH\Modules\Admin\Hooks\Controllers\AdminBarHandler;
 use UnderScorer\Core\Module;
-use WPK\Modules\Admin\Hooks\Controllers\AdminBarHandler;
 
 /**
  * Class AdminModule
- * @package WPK\Modules\Admin
+ * @package SMTH\Modules\Admin
  */
 class AdminModule extends Module
 {

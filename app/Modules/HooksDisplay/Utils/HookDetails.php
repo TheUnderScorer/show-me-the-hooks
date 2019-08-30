@@ -1,13 +1,13 @@
 <?php
 
-namespace WPK\Modules\HooksDisplay\Utils;
+namespace SMTH\Modules\HooksDisplay\Utils;
 
 use UnderScorer\Core\Models\SimpleModel;
 use UnderScorer\Core\Utility\AttributeBuilder;
 
 /**
  * Class HookDetails
- * @package WPK\Modules\HooksDisplay\Utils
+ * @package SMTH\Modules\HooksDisplay\Utils
  */
 class HookDetails extends SimpleModel
 {

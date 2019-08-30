@@ -1,12 +1,12 @@
 <?php
 
-namespace WPK\Modules\Admin\Http\Middleware;
+namespace SMTH\Modules\Admin\Http\Middleware;
 
 use UnderScorer\Core\Http\Middleware;
 
 /**
  * Class AdminAccess
- * @package WPK\Modules\Admin\Http\Middleware
+ * @package SMTH\Modules\Admin\Http\Middleware
  */
 class AdminAccess extends Middleware
 {

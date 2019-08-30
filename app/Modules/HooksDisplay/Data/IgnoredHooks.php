@@ -1,12 +1,12 @@
 <?php
 
-namespace WPK\Modules\HooksDisplay\Data;
+namespace SMTH\Modules\HooksDisplay\Data;
 
 use Illuminate\Support\Str;
 
 /**
  * Class IgnoredHooks
- * @package WPK\Modules\HooksDisplay\Data
+ * @package SMTH\Modules\HooksDisplay\Data
  */
 final class IgnoredHooks
 {

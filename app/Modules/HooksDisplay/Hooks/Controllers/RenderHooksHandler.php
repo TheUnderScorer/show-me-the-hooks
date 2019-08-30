@@ -1,17 +1,17 @@
 <?php
 
-namespace WPK\Modules\HooksDisplay\Hooks\Controllers;
+namespace SMTH\Modules\HooksDisplay\Hooks\Controllers;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\Str;
+use SMTH\Modules\HooksDisplay\Data\IgnoredHooks;
+use SMTH\Modules\HooksDisplay\Utils\HookAnalyzer;
 use UnderScorer\Core\Hooks\Controllers\Controller;
 use UnderScorer\Core\Utility\Arr;
-use WPK\Modules\HooksDisplay\Data\IgnoredHooks;
-use WPK\Modules\HooksDisplay\Utils\HookAnalyzer;
 
 /**
  * Class RenderHooksHandler
- * @package WPK\Modules\HooksDisplay\Hooks\Controllers
+ * @package SMTH\Modules\HooksDisplay\Hooks\Controllers
  */
 class RenderHooksHandler extends Controller
 {
