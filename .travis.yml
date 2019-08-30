@@ -3,9 +3,12 @@ sudo: false
 
 # Use the PHP environment
 language: php
+php:
+  - '7.3'
 
 services:
   - docker
+  - mysql
 
 # Don't send notifications via email, that's annoying
 notifications:
@@ -13,7 +16,6 @@ notifications:
     on_success: never
     on_failure: always
 
-# Trigger only on master -- we'll add Github pull requests in settings
 branches:
   only:
     - master
@@ -33,10 +35,8 @@ before_script:
   - composer install --no-progress
   - docker-compose --version
   - composer -V
+  - mysql -e 'CREATE DATABASE wordpress_test'
+  - mysql -u root -e "create user user identified by 'pass'; grant all on wordpress_test.* to user;"
 
-# Run tests
 script:
-  # Run just unit tests
-  - composer unit-tests
-  - docker-compose -f docker-compose.phpunit.local.yml up -d
   - vendor/bin/phpunit

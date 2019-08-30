@@ -1,6 +1,6 @@
 <?php
 
-namespace WPK\modules\HooksDisplay\Hooks\Controllers;
+namespace WPK\Modules\HooksDisplay\Hooks\Controllers;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\Str;
@@ -11,7 +11,7 @@ use WPK\Modules\HooksDisplay\Utils\HookAnalyzer;
 
 /**
  * Class RenderHooksHandler
- * @package WPK\modules\HooksDisplay\Hooks\Controllers
+ * @package WPK\Modules\HooksDisplay\Hooks\Controllers
  */
 class RenderHooksHandler extends Controller
 {
