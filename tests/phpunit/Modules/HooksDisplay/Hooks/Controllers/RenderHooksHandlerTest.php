@@ -1,14 +1,14 @@
 <?php
 
-namespace WPK\Tests\Modules\HooksDisplay\Hooks\Controllers;
+namespace SMTH\Tests\Modules\HooksDisplay\Hooks\Controllers;
 
+use SMTH\Modules\HooksDisplay\Hooks\Controllers\RenderHooksHandler;
 use UnderScorer\Core\Http\Request;
 use UnderScorer\Core\Tests\TestCase;
-use WPK\modules\HooksDisplay\Hooks\Controllers\RenderHooksHandler;
 
 /**
  * Class RenderHooksHandlerTest
- * @package WPK\Tests\Modules\HooksDisplay\Hooks\Controllers
+ * @package SMTH\Tests\Modules\HooksDisplay\Hooks\Controllers
  */
 class RenderHooksHandlerTest extends TestCase
 {
