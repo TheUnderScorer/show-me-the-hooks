@@ -52,7 +52,8 @@ class RenderHooksHandler extends Controller
      */
     public function handleHook( string $tag ): void
     {
-        if ( Str::contains( $tag, [ 'smth', 'wpk' ] ) ||
+        if ( is_admin() ||
+             Str::contains( $tag, [ 'smth', 'wpk' ] ) ||
              ( empty( $this->settings[ 'use_wp_hooks' ] ) && IgnoredHooks::isIgnored( $tag ) )
         ) {
             return;
@@ -66,6 +67,10 @@ class RenderHooksHandler extends Controller
         ] );
 
         $attributes = $renderer->getTagAttributes();
+
+        if ( $attributes->getType() === 'filter' ) {
+            return;
+        }
 
         echo $this->render( 'hook', [
             'tag'  => $tag,
