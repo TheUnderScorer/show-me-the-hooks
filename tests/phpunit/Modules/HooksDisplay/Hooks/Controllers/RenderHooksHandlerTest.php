@@ -13,6 +13,16 @@ class RenderHooksHandlerTest extends TestCase
 {
 
     /**
+     * @return void
+     */
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        set_current_screen( 'front' );
+    }
+
+    /**
      * @covers RenderHooksHandler::handle()
      */
     public function testHandle(): void
