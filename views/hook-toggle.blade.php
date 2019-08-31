@@ -16,21 +16,5 @@
         <li>
             <input type="search" id="smth_hooks_filter" class="input input-text" placeholder="Filter hooks...">
         </li>
-        <li>
-            <label for="smth_show_filters">
-                <input type="checkbox" id="smth_show_filters" value="1">
-                <span>
-                    Show filters
-                </span>
-            </label>
-        </li>
-        <li>
-            <label for="smth_show_filters">
-                <input checked type="checkbox" id="smth_show_filters" value="1">
-                <span>
-                    Show actions
-                </span>
-            </label>
-        </li>
     </ul>
 </div>
