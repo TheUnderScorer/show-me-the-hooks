@@ -1,0 +1,65 @@
+.smth-button-with-menu {
+
+	.smth-button-group {
+		border-radius: 5px;
+		display: flex;
+		box-shadow: var(--smth-material-box-shadow);
+		overflow: hidden;
+		position: relative;
+	}
+
+	&__button {
+		padding: 0 !important;
+		border-radius: 0 !important;
+
+		.smth-button-text {
+			padding: 1em;
+		}
+
+		.smth-toggle-icon {
+			margin-right: 1em;
+
+		}
+	}
+
+	&__toggle {
+		border-radius: 0 !important;
+
+		.smth-button-text {
+			transform: rotate(90deg);
+			transition: all .3s;
+			display: inline-block;
+		}
+	}
+
+	&__list {
+		display: none;
+		flex-direction: column;
+		background-color: var(--smth-white);
+		position: absolute;
+		top: 100%;
+		list-style: none;
+		width: calc(100% - 5px);
+		box-shadow: var(--smth-material-box-shadow);
+		margin: 0;
+		padding: 0;
+
+		li {
+			padding: 0.5em;
+		}
+
+		input {
+			width: 100%;
+		}
+	}
+
+	&.smth-active {
+		.smth-button-with-menu__list {
+			display: flex;
+		}
+
+		.smth-button-with-menu__toggle .smth-button-text {
+			transform: rotate(-90deg);
+		}
+	}
+}

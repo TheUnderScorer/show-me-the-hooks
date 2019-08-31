@@ -67,10 +67,6 @@ class RenderHooksHandler extends Controller
 
         $attributes = $renderer->getTagAttributes();
 
-        if ( $attributes->getType() === 'filter' ) {
-            return;
-        }
-
         echo $this->render( 'hook', [
             'tag'  => $tag,
             'hook' => $attributes,

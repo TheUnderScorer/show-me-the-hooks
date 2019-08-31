@@ -7,7 +7,7 @@
     <span class="smth-tag">
         {{ $tag }}
     </span>
-    <button class="button button-secondary smth-activator">
+    <button class="button button-secondary smth-button smth-light smth-activator">
         <span>
             ⯈
         </span>

@@ -27,9 +27,11 @@ const handleLocalStorage = (): void =>
 
 const changeLabel = ( button: HTMLButtonElement ): void =>
 {
+    const text = button.querySelector( '.smth-button-text' );
+
     state.hooksHidden ?
-        button.textContent = 'Show hooks' :
-        button.textContent = 'Hide hooks'
+        text.textContent = 'Show hooks' :
+        text.textContent = 'Hide hooks'
 };
 
 
