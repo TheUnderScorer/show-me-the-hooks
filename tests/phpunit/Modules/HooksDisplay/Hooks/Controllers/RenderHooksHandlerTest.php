@@ -3,7 +3,6 @@
 namespace SMTH\Tests\Modules\HooksDisplay\Hooks\Controllers;
 
 use SMTH\Modules\HooksDisplay\Hooks\Controllers\RenderHooksHandler;
-use UnderScorer\Core\Http\Request;
 use UnderScorer\Core\Tests\TestCase;
 
 /**
@@ -18,13 +17,7 @@ class RenderHooksHandlerTest extends TestCase
      */
     public function testHandle(): void
     {
-        $this->login('administrator');
-
-        $controller = self::$app->make( RenderHooksHandler::class );
-        $request    = new Request();
-        $request->query->set( 'smth', true );
-
-        $controller->setRequest( $request );
+        $this->login( 'administrator' );
 
         do_action( 'wp' );
 
@@ -33,7 +26,7 @@ class RenderHooksHandlerTest extends TestCase
 
         $output = ob_get_clean();
 
-        $this->assertContains('my_hook', $output);
+        $this->assertContains( 'my_hook', $output );
     }
 
     /**
@@ -43,11 +36,7 @@ class RenderHooksHandlerTest extends TestCase
     {
         $this->login( 'editor' );
 
-        $controller = self::$app->make( RenderHooksHandler::class );
-        $request    = new Request();
-        $request->query->set( 'smth', true );
-
-        $controller->setRequest( $request );
+        self::$app->make( RenderHooksHandler::class );
 
         do_action( 'wp' );
 

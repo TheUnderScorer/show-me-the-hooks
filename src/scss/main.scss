@@ -58,3 +58,14 @@
 .smth-hidden {
 	display: none;
 }
+
+.smth-hook-toggle-container {
+	position: fixed;
+	right: 1%;
+	top: 10%;
+
+	button {
+		font-weight: 400;
+		font-size: 1rem;
+	}
+}

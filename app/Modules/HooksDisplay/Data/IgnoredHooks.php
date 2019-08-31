@@ -14,6 +14,8 @@ final class IgnoredHooks
      * @var array Hooks that are ignored by our plugin
      */
     protected static $ignoredHooks = [
+        'woocommerce_before_template_part',
+        'woocommerce_after_template_part',
         'activated_plugin',
         'activate_blog',
         'activate_header',
@@ -2541,7 +2543,7 @@ final class IgnoredHooks
         '{$type}_upload_iframe_src',
         'update_post_metadata_cache',
         'update_comment_metadata_cache',
-        'update_term_metadata_cache'
+        'update_term_metadata_cache',
     ];
 
     /**

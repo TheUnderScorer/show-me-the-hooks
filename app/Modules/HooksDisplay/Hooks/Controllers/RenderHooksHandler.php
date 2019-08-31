@@ -16,6 +16,9 @@ use UnderScorer\Core\Utility\Arr;
 class RenderHooksHandler extends Controller
 {
 
+    /**
+     * @var array
+     */
     protected $settings = [];
 
     /**
@@ -23,15 +26,23 @@ class RenderHooksHandler extends Controller
      */
     public function handle(): void
     {
-        if ( ! $this->request->query->has( 'smth' ) ||
-             ! current_user_can( 'administrator' )
-        ) {
+        if ( ! current_user_can( 'administrator' ) ) {
             return;
         }
 
         $this->settings = Arr::make( $this->app->getSetting( 'settings' ) );
 
         add_action( 'all', [ $this, 'handleHook' ] );
+        add_action( 'wp_footer', [ $this, 'renderToggle' ] );
+    }
+
+    /**
+     * @return void
+     * @throws BindingResolutionException
+     */
+    public function renderToggle(): void
+    {
+        echo $this->render( 'hook-toggle' );
     }
 
     /**
@@ -55,6 +66,10 @@ class RenderHooksHandler extends Controller
         ] );
 
         $attributes = $renderer->getTagAttributes();
+
+        if ( $attributes->getType() === 'filter' ) {
+            return;
+        }
 
         echo $this->render( 'hook', [
             'tag'  => $tag,

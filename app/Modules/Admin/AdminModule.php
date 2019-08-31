@@ -2,7 +2,6 @@
 
 namespace SMTH\Modules\Admin;
 
-use SMTH\Modules\Admin\Hooks\Controllers\AdminBarHandler;
 use UnderScorer\Core\Module;
 
 /**
@@ -11,13 +10,6 @@ use UnderScorer\Core\Module;
  */
 class AdminModule extends Module
 {
-
-    /**
-     * @var array
-     */
-    protected $controllers = [
-        AdminBarHandler::class,
-    ];
 
     /**
      * Performs module bootstrap

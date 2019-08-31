@@ -8,6 +8,7 @@ use WP_Admin_Bar as AdminBar;
 /**
  * Class AdminBarHandler
  * @package SMTH\Modules\Admin\Hooks\Controllers
+ * @deprecated Not needed right now
  */
 class AdminBarHandler extends Controller
 {
