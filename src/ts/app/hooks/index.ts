@@ -9,4 +9,5 @@ hooks.forEach( hook =>
 
 hooksToggle.addEventListener( 'click', toggleVisibility );
 hooksFilterInput.addEventListener( 'keyup', handleSearch );
+hooksFilterInput.addEventListener( 'change', handleSearch );
 
