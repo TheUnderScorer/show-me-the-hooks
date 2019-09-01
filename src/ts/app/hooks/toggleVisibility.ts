@@ -46,8 +46,9 @@ const init = (): void =>
 {
     if ( !state.hooksHidden ) {
         showHooks();
-        changeLabel( hooksToggle );
     }
+
+    changeLabel( hooksToggle );
 
     document.addEventListener( 'smth.hooks.filtered', () => changeLabel( hooksToggle ) );
 };
