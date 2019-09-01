@@ -1,10 +1,10 @@
 <?php
 
-namespace WPK\Modules\HooksDisplay\Utils;
+namespace SMTH\Modules\HooksDisplay\Utils;
 
 /**
  * Class HookRenderer
- * @package WPK\Modules\HooksDisplay\Utils
+ * @package SMTH\Modules\HooksDisplay\Utils
  */
 class HookAnalyzer
 {

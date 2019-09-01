@@ -1,16 +1,16 @@
 <?php
 
-namespace WPK\Tests\Modules\Admin\Http\Controllers;
+namespace SMTH\Tests\Modules\Admin\Http\Controllers;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
+use SMTH\Modules\Admin\Http\Controllers\SaveSettingsController;
 use UnderScorer\Core\Http\Request;
 use UnderScorer\Core\Tests\Mock\Http\MockResponse;
 use UnderScorer\Core\Tests\TestCase;
-use WPK\Modules\Admin\Http\Controllers\SaveSettingsController;
 
 /**
  * Class SaveSettingsControllerTest
- * @package WPK\Tests\Modules\Admin\Http\Controllers
+ * @package SMTH\Tests\Modules\Admin\Http\Controllers
  */
 final class SaveSettingsControllerTest extends TestCase
 {

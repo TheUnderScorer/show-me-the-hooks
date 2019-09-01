@@ -1,12 +1,12 @@
 <?php
 
-namespace WPK\Modules\Admin\Http\Controllers;
+namespace SMTH\Modules\Admin\Http\Controllers;
 
 use UnderScorer\Core\Http\Controller;
 
 /**
  * Class SaveSettingsController
- * @package WPK\Modules\Admin\Http\Controllers
+ * @package SMTH\Modules\Admin\Http\Controllers
  */
 class SaveSettingsController extends Controller
 {

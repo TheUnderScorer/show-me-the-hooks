@@ -1,21 +1,24 @@
 <?php
 
-namespace WPK\Modules\HooksDisplay\Hooks\Controllers;
+namespace SMTH\Modules\HooksDisplay\Hooks\Controllers;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\Str;
+use SMTH\Modules\HooksDisplay\Data\IgnoredHooks;
+use SMTH\Modules\HooksDisplay\Utils\HookAnalyzer;
 use UnderScorer\Core\Hooks\Controllers\Controller;
 use UnderScorer\Core\Utility\Arr;
-use WPK\Modules\HooksDisplay\Data\IgnoredHooks;
-use WPK\Modules\HooksDisplay\Utils\HookAnalyzer;
 
 /**
  * Class RenderHooksHandler
- * @package WPK\Modules\HooksDisplay\Hooks\Controllers
+ * @package SMTH\Modules\HooksDisplay\Hooks\Controllers
  */
 class RenderHooksHandler extends Controller
 {
 
+    /**
+     * @var array
+     */
     protected $settings = [];
 
     /**
@@ -23,15 +26,23 @@ class RenderHooksHandler extends Controller
      */
     public function handle(): void
     {
-        if ( ! $this->request->query->has( 'smth' ) ||
-             ! current_user_can( 'administrator' )
-        ) {
+        if ( ! current_user_can( 'administrator' ) ) {
             return;
         }
 
         $this->settings = Arr::make( $this->app->getSetting( 'settings' ) );
 
         add_action( 'all', [ $this, 'handleHook' ] );
+        add_action( 'wp_footer', [ $this, 'renderToggle' ] );
+    }
+
+    /**
+     * @return void
+     * @throws BindingResolutionException
+     */
+    public function renderToggle(): void
+    {
+        echo $this->render( 'hook-toggle' );
     }
 
     /**
@@ -41,7 +52,8 @@ class RenderHooksHandler extends Controller
      */
     public function handleHook( string $tag ): void
     {
-        if ( Str::contains( $tag, [ 'smth', 'wpk' ] ) ||
+        if ( is_admin() ||
+             Str::contains( $tag, [ 'smth', 'wpk' ] ) ||
              ( empty( $this->settings[ 'use_wp_hooks' ] ) && IgnoredHooks::isIgnored( $tag ) )
         ) {
             return;
@@ -55,6 +67,10 @@ class RenderHooksHandler extends Controller
         ] );
 
         $attributes = $renderer->getTagAttributes();
+
+        if ( $attributes->getType() === 'filter' ) {
+            return;
+        }
 
         echo $this->render( 'hook', [
             'tag'  => $tag,

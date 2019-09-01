@@ -3,20 +3,16 @@
  * @var WPK\Modules\HooksDisplay\Utils\HookDetails $hook
  */
 ?>
-<div class="smth-hook {{ $hook->getType() }}">
+<div class="smth-hook smth-hidden {{ $hook->getType() }}">
     <span class="smth-tag">
         {{ $tag }}
     </span>
-    <button class="button button-secondary smth-activator">
+    <button class="button button-secondary smth-button smth-light smth-activator">
         <span>
             ⯈
         </span>
     </button>
     <ul class="smth-hook-details smth-hidden">
-        <li class="smth-type">
-            <strong>Type: </strong>
-            <span>{{ $hook->getType() }}</span>
-        </li>
         <li class="smth-args">
             <strong>
                 Args:

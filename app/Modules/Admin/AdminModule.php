@@ -1,23 +1,15 @@
 <?php
 
-namespace WPK\Modules\Admin;
+namespace SMTH\Modules\Admin;
 
 use UnderScorer\Core\Module;
-use WPK\Modules\Admin\Hooks\Controllers\AdminBarHandler;
 
 /**
  * Class AdminModule
- * @package WPK\Modules\Admin
+ * @package SMTH\Modules\Admin
  */
 class AdminModule extends Module
 {
-
-    /**
-     * @var array
-     */
-    protected $controllers = [
-        AdminBarHandler::class,
-    ];
 
     /**
      * Performs module bootstrap

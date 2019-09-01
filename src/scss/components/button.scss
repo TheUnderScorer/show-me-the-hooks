@@ -1,0 +1,14 @@
+.smth-button {
+
+	&.smth-light {
+		&:focus {
+			background: transparent !important;
+			outline: none;
+		}
+
+		&:hover {
+			background: var(--smth-light-grey) !important;
+			outline: none;
+		}
+	}
+}

@@ -1,30 +1,33 @@
 <?php
 
-namespace WPK\Tests\Modules\HooksDisplay\Hooks\Controllers;
+namespace SMTH\Tests\Modules\HooksDisplay\Hooks\Controllers;
 
-use UnderScorer\Core\Http\Request;
+use SMTH\Modules\HooksDisplay\Hooks\Controllers\RenderHooksHandler;
 use UnderScorer\Core\Tests\TestCase;
-use WPK\modules\HooksDisplay\Hooks\Controllers\RenderHooksHandler;
 
 /**
  * Class RenderHooksHandlerTest
- * @package WPK\Tests\Modules\HooksDisplay\Hooks\Controllers
+ * @package SMTH\Tests\Modules\HooksDisplay\Hooks\Controllers
  */
-class RenderHooksHandlerTest extends TestCase
+final class RenderHooksHandlerTest extends TestCase
 {
+
+    /**
+     * @return void
+     */
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        set_current_screen( 'front' );
+    }
 
     /**
      * @covers RenderHooksHandler::handle()
      */
     public function testHandle(): void
     {
-        $this->login('administrator');
-
-        $controller = self::$app->make( RenderHooksHandler::class );
-        $request    = new Request();
-        $request->query->set( 'smth', true );
-
-        $controller->setRequest( $request );
+        $this->login( 'administrator' );
 
         do_action( 'wp' );
 
@@ -33,7 +36,7 @@ class RenderHooksHandlerTest extends TestCase
 
         $output = ob_get_clean();
 
-        $this->assertContains('my_hook', $output);
+        $this->assertContains( 'my_hook', $output );
     }
 
     /**
@@ -43,11 +46,7 @@ class RenderHooksHandlerTest extends TestCase
     {
         $this->login( 'editor' );
 
-        $controller = self::$app->make( RenderHooksHandler::class );
-        $request    = new Request();
-        $request->query->set( 'smth', true );
-
-        $controller->setRequest( $request );
+        self::$app->make( RenderHooksHandler::class );
 
         do_action( 'wp' );
 

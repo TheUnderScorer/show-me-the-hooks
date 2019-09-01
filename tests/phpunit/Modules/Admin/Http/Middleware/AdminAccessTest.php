@@ -1,10 +1,10 @@
 <?php
 
-namespace WPK\Tests\Modules\Admin\Http\Middleware;
+namespace SMTH\Tests\Modules\Admin\Http\Middleware;
 
+use SMTH\Modules\Admin\Http\Middleware\AdminAccess;
 use UnderScorer\Core\Tests\Mock\Http\MockResponse;
 use UnderScorer\Core\Tests\TestCase;
-use WPK\Modules\Admin\Http\Middleware\AdminAccess;
 
 final class AdminAccessTest extends TestCase
 {

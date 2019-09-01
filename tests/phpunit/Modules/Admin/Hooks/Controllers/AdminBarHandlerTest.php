@@ -1,15 +1,15 @@
 <?php
 
-namespace WPK\Tests\Modules\Admin\Hooks\Controllers;
+namespace SMTH\Tests\Modules\Admin\Hooks\Controllers;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
+use SMTH\Modules\Admin\Hooks\Controllers\AdminBarHandler;
 use UnderScorer\Core\Tests\TestCase;
 use WP_Admin_Bar as AdminBar;
-use WPK\Modules\Admin\Hooks\Controllers\AdminBarHandler;
 
 /**
  * Class AdminBarHandlerTest
- * @package WPK\Tests\Modules\Admin\Hooks\Controllers
+ * @package SMTH\Tests\Modules\Admin\Hooks\Controllers
  */
 final class AdminBarHandlerTest extends TestCase
 {

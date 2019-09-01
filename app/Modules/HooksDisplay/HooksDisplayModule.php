@@ -1,13 +1,13 @@
 <?php
 
-namespace WPK\Modules\HooksDisplay;
+namespace SMTH\Modules\HooksDisplay;
 
+use SMTH\Modules\HooksDisplay\Hooks\Controllers\RenderHooksHandler;
 use UnderScorer\Core\Module;
-use WPK\Modules\HooksDisplay\Hooks\Controllers\RenderHooksHandler;
 
 /**
  * Class HooksDisplayModule
- * @package WPK\Modules\HooksDisplay
+ * @package SMTH\Modules\HooksDisplay
  */
 class HooksDisplayModule extends Module
 {

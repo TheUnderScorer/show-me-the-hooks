@@ -17,6 +17,7 @@ services:
       WORDPRESS_DEBUG: 1
     volumes:
       - ./:/var/www/html/wp-content/plugins/smth:rw
+      - ./.docker/wordpress/plugins/woocommerce:/var/www/html/wp-content/plugins/woocommerce:rw
       - wp:/var/www/html:rw
       - ./docker/config/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
 

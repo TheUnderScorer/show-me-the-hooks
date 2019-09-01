@@ -1,8 +1,8 @@
 <?php
 
+use SMTH\Modules\Admin\Http\Controllers\SaveSettingsController;
+use SMTH\Modules\Admin\Http\Middleware\AdminAccess;
 use UnderScorer\Core\Http\Router;
-use WPK\Modules\Admin\Http\Controllers\SaveSettingsController;
-use WPK\Modules\Admin\Http\Middleware\AdminAccess;
 
 /**
  * @var Router $router

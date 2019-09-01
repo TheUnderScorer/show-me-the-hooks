@@ -1,13 +1,13 @@
 <?php
 
-namespace WPK\Tests\Modules\HooksDisplay\Data;
+namespace SMTH\Tests\Modules\HooksDisplay\Data;
 
-use WPK\Modules\HooksDisplay\Data\IgnoredHooks;
+use SMTH\Modules\HooksDisplay\Data\IgnoredHooks;
 use UnderScorer\Core\Tests\TestCase;
 
 /**
  * Class IgnoredHooksTest
- * @package WPK\Tests\Modules\HooksDisplay\Data
+ * @package SMTH\Tests\Modules\HooksDisplay\Data
  */
 final class IgnoredHooksTest extends TestCase
 {
