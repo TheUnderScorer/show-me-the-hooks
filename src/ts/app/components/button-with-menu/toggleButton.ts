@@ -1,6 +1,8 @@
-export default ( event: Event ): void =>
+import ElementEvent from '../../types/ElementEvent';
+
+export default ( event: ElementEvent<HTMLButtonElement> ): void =>
 {
-    const button = event.currentTarget as HTMLButtonElement;
+    const button = event.currentTarget;
     const parent = button.parentElement.parentElement;
 
     parent.classList.toggle( 'smth-active' );

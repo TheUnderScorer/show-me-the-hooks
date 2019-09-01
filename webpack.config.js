@@ -64,6 +64,7 @@ module.exports = [
             filename:      'smth-[name].js',
             chunkFilename: 'smth-chunk-[name].js',
             path:          path.join( __dirname, '/public/js' ),
+            publicPath:    '/wp-content/plugins/smth/public/js/'
         },
         mode,
         externals:    {

@@ -1,6 +1,8 @@
-export default ( event: Event ) =>
+import ElementEvent from '../types/ElementEvent';
+
+export default ( event: ElementEvent<HTMLButtonElement> ) =>
 {
-    const activatorBtn = event.currentTarget as HTMLElement;
+    const activatorBtn = event.currentTarget;
     const { parentElement } = activatorBtn;
     const list = parentElement.querySelector( '.smth-hook-details' );
 

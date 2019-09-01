@@ -1,16 +1,19 @@
 import { showHooks, toggleHooks } from './utils/visibility';
 import { hooksToggle } from './selectors';
+import HooksState from '../types/HooksState';
+import ElementEvent from '../types/ElementEvent';
+import { getVisibleHooksCount } from './count';
 
 const localStorageState = localStorage.getItem( 'smth_hooks_state' );
-const defaultState = {
+const defaultState: HooksState = {
     hooksHidden: true
 };
 
-export const state = localStorageState ? JSON.parse( localStorageState ) : { ...defaultState };
+export const state: HooksState = localStorageState ? JSON.parse( localStorageState ) : { ...defaultState };
 
-export default ( event: Event ) =>
+export default ( event: ElementEvent<HTMLButtonElement> ) =>
 {
-    const btn = event.currentTarget as HTMLButtonElement;
+    const btn = event.currentTarget;
 
     toggleHooks();
 
@@ -25,17 +28,27 @@ const handleLocalStorage = (): void =>
     localStorage.setItem( 'smth_hooks_state', JSON.stringify( state ) );
 };
 
-const changeLabel = ( button: HTMLButtonElement ): void =>
+export const changeLabel = ( button: HTMLButtonElement ): void =>
 {
     const text = button.querySelector( '.smth-button-text' );
 
+    let label: string;
+
     state.hooksHidden ?
-        text.textContent = 'Show hooks' :
-        text.textContent = 'Hide hooks'
+        label = 'Show hooks' :
+        label = 'Hide hooks';
+
+    text.textContent = `${ label } (${ getVisibleHooksCount() })`;
 };
 
 
-if ( !state.hooksHidden ) {
-    showHooks();
-    changeLabel( hooksToggle );
-}
+const init = (): void =>
+{
+    if ( !state.hooksHidden ) {
+        showHooks();
+        changeLabel( hooksToggle );
+    }
+
+    document.addEventListener( 'smth.hooks.filtered', () => changeLabel( hooksToggle ) );
+};
+init();

@@ -9,7 +9,7 @@ use UnderScorer\Core\Tests\TestCase;
  * Class RenderHooksHandlerTest
  * @package SMTH\Tests\Modules\HooksDisplay\Hooks\Controllers
  */
-class RenderHooksHandlerTest extends TestCase
+final class RenderHooksHandlerTest extends TestCase
 {
 
     /**

@@ -1,16 +1,23 @@
 import { hooks } from './selectors';
+import ElementEvent from '../types/ElementEvent';
 
-export default ( event: Event ): void =>
+export default ( event: ElementEvent<HTMLInputElement> ): void =>
 {
-    const target = event.currentTarget as HTMLInputElement;
+    const { currentTarget } = event;
 
-    filterHooks( target.value );
+    filterHooks( currentTarget.value );
 }
 
 export const filterHooks = ( filter: string ): void =>
 {
+    const event = new CustomEvent( 'smth.hooks.filtered' );
+
     if ( !filter ) {
         hooks.forEach( hook => hook.classList.remove( 'smth-filtered' ) );
+
+        document.dispatchEvent( event );
+
+        return;
     }
 
     const filterLower = filter.toLowerCase();
@@ -25,4 +32,6 @@ export const filterHooks = ( filter: string ): void =>
             hook.classList.remove( 'smth-filtered' );
         }
     } );
+
+    document.dispatchEvent( event );
 };
