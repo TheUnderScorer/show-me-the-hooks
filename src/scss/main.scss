@@ -12,7 +12,7 @@
 
 .smth-hook {
 	font-family: monospace;
-	font-size: 0.8rem;
+	font-size: 16px;
 	margin: 5px;
 	background: var(--smth-hook-color);
 	color: #fff;
@@ -20,6 +20,7 @@
 	display: inline-block;
 	box-shadow: var(--smth-material-box-shadow);
 	max-width: 400px;
+	word-break: break-word;
 
 	&.filter {
 		background-color: var(--smth-filter-color);
@@ -68,6 +69,7 @@
 	position: fixed;
 	right: 1%;
 	top: 10%;
+	z-index: 10;
 
 	button {
 		font-weight: 400;

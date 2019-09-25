@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.0.0",
   "name": "show-me-the-hooks",
   "require": {
     "the-under-scorer/wpk-core": "^1.2",

@@ -7,7 +7,7 @@ Plugin Name: Show Me The Hooks!
 Description: Have you ever wonder what hooks you need to use to customize your theme or plugin? Then this plugin comes to your rescue!
 Author: Przemysław Żydek
 Author URI: https://github.com/TheUnderScore
-Version: 0.1
+Version: 1.0.0
 Text Domain: smth
 */
 
@@ -25,6 +25,10 @@ $slug = CORE_SLUG;
 
 // Require composer autoloader
 require_once $dir . '/vendor/autoload.php';
+
+if ( ! version_compare( PHP_VERSION, App::REQUIRED_PHP_VERSION, '>' ) ) {
+    throw new Exception( 'Required PHP version for Show Me The Hooks is at least 7.3' );
+}
 
 try {
 
